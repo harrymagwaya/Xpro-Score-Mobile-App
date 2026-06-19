@@ -3,7 +3,7 @@ Xpro Score App is a React Native / Expo mobile application for viewing tenant cr
 
 ## App Preview
 
-xpro-score-home.png
+![Xpro Score App Screenshot](./assets/xpro-score-home.png)
 
 
 ## Disclaimer
