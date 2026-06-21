@@ -1,0 +1,62 @@
+{
+  "expo": {
+    "name": "Mob Rental",
+    "slug": "mob-rental",
+    "scheme": "mobrental",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0B1220"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.xpro.mobrental",
+      "associatedDomains": [
+        "applinks:tenant.xpro.example"
+      ]
+    },
+    "android": {
+      "package": "com.xpro.mobrental",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0B1220"
+      },
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "tenant.xpro.example",
+              "pathPrefix": "/app"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
+    },
+    "plugins": [
+      "expo-splash-screen"
+    ],
+    "extra": {
+      "apiBaseUrl": "http://localhost:8081",
+      "loginEndpoint": "/api/v1/auth/login",
+      "passwordResetEndpoint": "/api/v1/auth/reset-password",
+      "tenantAppId": "XPRO_RENTAL_MOBILE_APP",
+      "eas": {
+        "projectId": "454235c6-5830-4456-aa95-5014d82e511c"
+      }
+    }
+  }
+}
