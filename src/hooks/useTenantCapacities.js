@@ -1,4 +1,4 @@
-import { getCapacity } from '../api/tenant';
+import { getCapacity, upsertTenantCapacity } from '../api/tenant';
 import useAuth from './useAuth';
 import { useAsyncResource } from './useAsyncResource';
 
@@ -10,4 +10,12 @@ export function useTenantCapacity(tenantId) {
     immediate: ready,
     enabled: ready
   });
+}
+
+export function useTenantCapacityActions() {
+  const { token } = useAuth();
+
+  return {
+    upsertTenantCapacity: (payload) => upsertTenantCapacity(token, payload)
+  };
 }

@@ -16,7 +16,7 @@ export default function UnitScreen() {
   const { userId } = useAuth();
   const unitResource = useUnitByTenant(userId);
 
-  if (unitResource.loading && !unitResource.data) return <ScreenLoader label="Loading your unit assignment..." />;
+  if (unitResource.loading && !unitResource.data) return <ScreenLoader label="Loading your tenancy signal..." />;
   if (unitResource.error && !unitResource.data) return <Screen><ErrorState message={unitResource.error.message} onRetry={unitResource.reload} /></Screen>;
 
   const unit = unitResource.data || {};
@@ -25,10 +25,10 @@ export default function UnitScreen() {
     <Screen refreshing={unitResource.loading} onRefresh={unitResource.reload}>
       <Card>
         <Text style={styles.name}>{firstDefined(unit.unitName, unit.unitNumber, 'No unit assigned')}</Text>
-        <Text style={styles.subtitle}>{firstDefined(unit.propertyName, unit.property?.name, 'Awaiting landlord assignment')}</Text>
+        <Text style={styles.subtitle}>{firstDefined(unit.propertyName, unit.property?.name, 'Tenancy details are not yet linked')}</Text>
       </Card>
 
-      <SectionHeading title="Unit Details" />
+      <SectionHeading title="Tenancy Details" />
       <Card>
         <Row label="Property" value={firstDefined(unit.propertyName, unit.property?.name, '-')} />
         <Row label="Unit" value={firstDefined(unit.unitName, unit.unitNumber, '-')} />

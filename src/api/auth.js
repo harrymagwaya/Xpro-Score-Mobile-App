@@ -25,11 +25,13 @@ export async function loginTenant(email, password) {
 }
 
 export async function registerTenant(payload) {
+  const { role: _ignoredRole, userRole: _ignoredUserRole, gender, ...tenantPayload } = payload;
   const data = await request(REGISTER_ENDPOINT, {
     method: 'POST',
     headers: { 'X-APP': TENANT_APP_ID },
     body: {
-      ...payload,
+      ...tenantPayload,
+      ...(gender ? { gender: String(gender).trim().toUpperCase() } : {}),
       userRole: 'TENANT'
     }
   });

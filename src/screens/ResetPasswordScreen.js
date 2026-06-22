@@ -33,7 +33,7 @@ export default function ResetPasswordScreen() {
     <Screen>
       <Card>
         <Text style={styles.title}>Reset Password</Text>
-        <Text style={styles.text}>This mobile flow is wired through a dedicated password reset hook and can be connected to OTP or email verification next.</Text>
+        <Text style={styles.text}>Enter your Xpro Score account email and we’ll start the password recovery process.</Text>
         <TextInput style={styles.input} placeholder="Email address" autoCapitalize="none" keyboardType="email-address" value={email} onChangeText={setEmail} />
         <Pressable style={styles.button} onPress={submit} disabled={submitting}>
           <Text style={styles.buttonText}>{submitting ? 'Submitting...' : 'Request Reset'}</Text>

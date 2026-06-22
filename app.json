@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "Mob Rental",
+    "name": "Xpro Score",
     "slug": "mob-rental",
     "scheme": "mobrental",
-    "version": "0.1.0",
+    "version": "1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash_xpro_score.png",
       "resizeMode": "contain",
       "backgroundColor": "#0B1220"
     },
@@ -19,11 +19,13 @@
       "supportsTablet": false,
       "bundleIdentifier": "com.xpro.mobrental",
       "associatedDomains": [
+        "applinks:tenant.xpro.example",
         "applinks:tenant.xpro.example"
       ]
     },
     "android": {
       "package": "com.xpro.mobrental",
+      "usesCleartextTraffic": true,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0B1220"
@@ -43,11 +45,36 @@
             "BROWSABLE",
             "DEFAULT"
           ]
+        },
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "tenant.xpro.example",
+              "pathPrefix": "/app"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
         }
       ]
     },
     "plugins": [
-      "expo-splash-screen"
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash_xpro_score.png",
+          "imageWidth": 300,
+          "resizeMode": "contain",
+          "backgroundColor": "#0B1220"
+        }
+      ],
+      "expo-asset",
+      "expo-font"
     ],
     "extra": {
       "apiBaseUrl": "http://localhost:8081",
@@ -57,6 +84,12 @@
       "eas": {
         "projectId": "454235c6-5830-4456-aa95-5014d82e511c"
       }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/454235c6-5830-4456-aa95-5014d82e511c"
     }
   }
 }

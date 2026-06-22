@@ -15,7 +15,7 @@ export default function Screen({ children, scroll = true, refreshing = false, on
       {children}
     </ScrollView>
   ) : (
-    <View style={styles.scrollContent}>{children}</View>
+    <View style={styles.contentWrapper}>{children}</View>
   );
 
   return (
@@ -30,6 +30,9 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: colors.canvas
+  },
+  contentWrapper: {
+    flex: 1
   },
   scrollContent: {
     padding: 16,
